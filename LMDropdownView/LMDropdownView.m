@@ -65,8 +65,10 @@
         // Animate menu view controller
         [self addMenuAnimationForMenuState:_currentState];
         
-        // Animate content view controller
-        [self addContentAnimationForMenuState:_currentState];
+        if (self.closedScale < 1) {
+            // Animate content view controller
+            [self addContentAnimationForMenuState:_currentState];
+        }
         
         // Finish showing
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.animationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -84,8 +86,10 @@
         // Animate menu view controller
         [self addMenuAnimationForMenuState:_currentState];
         
-        // Animate content view controller
-        [self addContentAnimationForMenuState:_currentState];
+        if (self.closedScale < 1) {
+            // Animate content view controller
+            [self addContentAnimationForMenuState:_currentState];
+        }
         
         // Finish hiding
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.animationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
